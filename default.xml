@@ -12,7 +12,7 @@
            remote="github"
            sync-j="4" />
 
-  <project path="build" name="CyanogenMod/android_build">
+  <project path="build" name="p500-ics-cm9/android_build">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
@@ -23,6 +23,7 @@
   <project path="dalvik" name="CyanogenMod/android_dalvik" />
   <project path="development" name="CyanogenMod/android_development" />
   <project path="device/common" name="device/common" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
+<!--
   <project path="device/generic/goldfish" name="device/generic/goldfish" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
@@ -35,6 +36,8 @@
   <project path="device/samsung/toro" name="CyanogenMod/android_device_samsung_toro" />
   <project path="device/samsung/tuna" name="CyanogenMod/android_device_samsung_tuna" />
   <project path="device/ti/panda" name="device/ti/panda" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
+-->
+  <project path="device/lge/thunderg" name="p500-ics-cm9/LGP500-ics-device-folder" revision="cm9" />
   <project path="external/android-mock" name="platform/external/android-mock" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
   <project path="external/antlr" name="platform/external/antlr" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
   <project path="external/apache-harmony" name="platform/external/apache-harmony" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
@@ -151,9 +154,9 @@
   <project path="external/tremolo" name="CyanogenMod/android_external_tremolo" />
   <project path="external/v8" name="CyanogenMod/android_external_v8" />
   <project path="external/valgrind" name="CyanogenMod/android_external_valgrind" />
-  <project path="external/webkit" name="CyanogenMod/android_external_webkit" />
+  <project path="external/webkit" name="p500-ics-cm9/android_external_webkit" />
   <project path="external/webp" name="CyanogenMod/android_external_webp" />
-  <project path="external/webrtc" name="platform/external/webrtc" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
+  <project path="external/webrtc" name="p500-ics-cm9/android_external_webrtc" revision="ics-exdroid" />
   <project path="external/wireless-tools" name="CyanogenMod/android_external_wireless-tools" />
   <project path="external/wpa_supplicant" name="CyanogenMod/android_external_wpa_supplicant" />
   <project path="external/wpa_supplicant_6" name="CyanogenMod/android_external_wpa_supplicant_6" />
@@ -194,7 +197,7 @@
   <project path="packages/apps/Browser" name="CyanogenMod/android_packages_apps_Browser" />
   <project path="packages/apps/Calculator" name="CyanogenMod/android_packages_apps_Calculator" />
   <project path="packages/apps/Calendar" name="CyanogenMod/android_packages_apps_Calendar" />
-  <project path="packages/apps/Camera" name="CyanogenMod/android_packages_apps_Camera" />
+  <project path="packages/apps/Camera" name="p500-ics-cm9/android_packages_apps_Camera" />
   <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
   <project path="packages/apps/CertInstaller" name="CyanogenMod/android_packages_apps_CertInstaller" />
   <project path="packages/apps/Contacts" name="CyanogenMod/android_packages_apps_Contacts" />
@@ -221,6 +224,7 @@
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
   <project path="packages/apps/Stk" name="CyanogenMod/android_packages_apps_Stk" />
   <project path="packages/apps/Superuser" name="CyanogenMod/android_packages_apps_Superuser" />
+  <project path="packages/apps/LedNotifications" name="CyanogenMod/LedNotifications" revision="master" />
   <project path="packages/apps/Tag" name="CyanogenMod/android_packages_apps_Tag" />
   <project path="packages/apps/Trebuchet" name="CyanogenMod/android_packages_apps_Trebuchet" />
   <project path="packages/apps/VideoEditor" name="platform/packages/apps/VideoEditor" remote="aosp" revision="refs/tags/android-4.0.3_r1" />
@@ -257,5 +261,5 @@
   <project path="system/su" name="CyanogenMod/android_system_su" />
   <project path="system/vold" name="CyanogenMod/android_system_vold" />
 
-  <project path="android" name="CyanogenMod/android" />
+  <project path="android" name="p500-ics-cm9/android" />
 </manifest>
