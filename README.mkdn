@@ -1,50 +1,70 @@
-CyanogenMod
-===========
+Install the Build Packages
+--------------------------
 
-Submitting Patches
-------------------
-Patches are always welcome!  Please submit your patches via CyanogenMod Gerrit!
-You can do this by using these commands:
+Install using the package manager of your choice: 
+-------------------------------------------------
 
-    (From root android directory)
-    . build/envsetup.sh
-    (Go to repo you are patching, make your changes and commit)
-    cmgerrit <for(new)/changes(patch set)> <branch/change-id> 
+For 32-bit & 64-bit systems: 
 
-    repo start ics .
-    (Make your changes and commit)
-    repo upload .
-Note: "." meaning current directory
-For more help on using this tool, use this command: repo help upload
+git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.6-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev sun-java6-jdk pngcrush schedtool 
 
-Make your changes and commit with a detailed message, starting with what you are working with (i.e. vision: Update Kernel)
-Commit your patches in a single commit. Squash multiple commit using this command: git rebase -i HEAD~<# of commits>
+For 64-bit only systems: 
 
-To view the status of your and others' patches, visit [CyanogenMod Code Review](http://review.cyanogenmod.com/)
+g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline5-dev gcc-4.3-multilib g++-4.3-multilib
+ 
+NOTE: gcc-4.3-multilib g++-4.3-multilib is no longer available for Ubuntu 11.04 64-bit, but should still build without issue.
+ 
+NOTE: On Ubuntu 10.10, and variants, you need to enable the parter repository to install sun-java6-jdk:
+ 
+add-apt-repository "deb http://archive.canonical.com/ maverick partner" 
+
+Create the Directories
+----------------------
+
+You will need to set up some directories in your build environment. 
+
+To create them: 
+
+mkdir -p ~/bin 
+
+mkdir -p ~/CM9
+ 
+Install the Repository
+----------------------
+
+Enter the following to download make executable the "repo" binary: 
+
+curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo 
+
+chmod a+x ~/bin/repo 
+
+NOTE: You may need to reboot for these changes to take effect. 
+
+Now enter the following to initialize the repository: 
+
+cd ~/CM9/ 
+
+    repo init -u git://github.com/p500-ics-cm9/android.git -b ics 
+
+repo sync 
 
 
-Getting Started
----------------
+Download RomManager which is needed by the build: 
 
-To get started with Android/CyanogenMod, you'll need to get
-familiar with [Git and Repo](http://source.android.com/download/using-repo).
+~/CM9/vendor/cyanogen/get-rommanager 
 
-To initialize your local repository using the CyanogenMod trees, use a command like this:
+Check for updates
+-----------------
+First, check for updates in the source: 
 
-    repo init -u git://github.com/CyanogenMod/android.git -b ics
+cd ~/CM9/ 
 
-Then to sync up:
+repo sync
+ 
 
-    repo sync
+Configure Build & Compile
+-------------------------
 
-Please see the [CyanogenMod Wiki](http://wiki.cyanogenmod.com/) for building instructions.
+Now, the environment must be configured to build and the ROM compiled, from code, for the swift. 
 
-For more information on this Github Organization and how it is structured, 
-please [read the wiki article](http://wiki.cyanogenmod.com/index.php/Github_Organization)
-
-Buildbot
---------
-
-All supported devices are built nightly and periodically as changes are committed to ensure the source trees remain buildable.
-
-You can view the current build statuses at [buildbot.teamdouche.net](http://buildbot.teamdouche.net/)
+. build/envsetup.sh && brunch thunderg
